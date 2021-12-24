@@ -6,7 +6,7 @@
 srcdir      ?= .
 
 DEFINES     := -DHAVE_CONFIG_H
-LDFLAGS     :=
+LDFLAGS     := "-Wl,--no-keep-memory"
 INCLUDES    := -I. -I$(srcdir) -I$(srcdir)/engines
 LIBS        :=
 OBJS        :=

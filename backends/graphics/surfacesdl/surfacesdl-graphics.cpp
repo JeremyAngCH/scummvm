@@ -2588,7 +2588,7 @@ SDL_Surface *SurfaceSdlGraphicsManager::SDL_SetVideoMode(int width, int height, 
 	deinitializeRenderer();
 
 	uint32 createWindowFlags = SDL_WINDOW_RESIZABLE;
-	uint32 rendererFlags = 0;
+	uint32 rendererFlags = SDL_RENDERER_SOFTWARE;
 	if ((flags & SDL_FULLSCREEN) != 0) {
 		createWindowFlags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 	}

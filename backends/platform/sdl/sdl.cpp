@@ -209,7 +209,7 @@ void OSystem_SDL::initBackend() {
 #endif
 	debug(1, "Using SDL Video Driver \"%s\"", sdlDriverName);
 
-#if defined(USE_OPENGL_GAME) || defined(USE_OPENGL_SHADERS) || defined(USE_GLES2)
+#if 0 // defined(USE_OPENGL_GAME) || defined(USE_OPENGL_SHADERS) || defined(USE_GLES2)
 	detectFramebufferSupport();
 	detectAntiAliasingSupport();
 #endif
@@ -233,7 +233,7 @@ void OSystem_SDL::initBackend() {
 	ScalerMan.updateOldSettings();
 
 	if (_graphicsManager == nullptr) {
-#ifdef USE_OPENGL
+#if 0 //def USE_OPENGL
 		// Setup a list with both SDL and OpenGL graphics modes. We only do
 		// this whenever the subclass did not already set up an graphics
 		// manager yet. This is because we don't know the type of the graphics
@@ -264,6 +264,7 @@ void OSystem_SDL::initBackend() {
 #endif
 
 		if (_graphicsManager == nullptr) {
+			debug(1, "DEBUG: Using SDL suface");
 			_graphicsManager = new SurfaceSdlGraphicsManager(_eventSource, _window);
 		}
 	}
